@@ -4,8 +4,9 @@ Locate devices through login log scraping. Normally you would have to manually f
  Features:
  
  * Loades .log files via username or hostname and lists them in a listbox from most recent.
- * Seperates computer and user logins by grade schools (e.g. elementary, junior high, senior high).
+ * Separates computer and user logins by grade schools (e.g. elementary, junior high, senior high).
  * Ping hostname from software.
- * Finds additional information about the the user (e.g. user ID, last login, last password, full name, phone number).
+ * Finds additional information about the user (e.g. user ID, last login, last password, full name, phone number).
+ * Shortcuts to Munis and KAMS (TipWeb IT) for quick access to fixed assets 
 
 ![alt text](https://github.com/christian45410/Device-Location-Assistant/blob/main/screenshot.png)
