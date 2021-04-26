@@ -43,14 +43,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DLA.exe" size="279488">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DLA.exe" size="281088">
       <assemblyIdentity name="DLA" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>yBzZ0bzkTmPn5cJyo5GGOmci8ajMKvYwq871zZLHFtg=</dsig:DigestValue>
+        <dsig:DigestValue>lTJ4WVrngZPI01rXeTDs6w3EOgiNOIvPryWRcJsl1nY=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

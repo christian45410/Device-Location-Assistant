@@ -30,8 +30,13 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.btnPing = new System.Windows.Forms.ToolStripButton();
             this.cmbCampus = new System.Windows.Forms.ToolStripComboBox();
             this.tbSearch = new System.Windows.Forms.ToolStripTextBox();
+            this.btnSettings = new System.Windows.Forms.ToolStripButton();
+            this.btnPrint = new System.Windows.Forms.ToolStripButton();
+            this.btnMunis = new System.Windows.Forms.ToolStripButton();
+            this.btnKams = new System.Windows.Forms.ToolStripButton();
             this.tbHost = new System.Windows.Forms.TextBox();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.printDialog1 = new System.Windows.Forms.PrintDialog();
@@ -48,11 +53,6 @@
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.btnAbout = new System.Windows.Forms.Label();
             this.lbUpdate = new System.Windows.Forms.Label();
-            this.btnPing = new System.Windows.Forms.ToolStripButton();
-            this.btnSettings = new System.Windows.Forms.ToolStripButton();
-            this.btnPrint = new System.Windows.Forms.ToolStripButton();
-            this.btnMunis = new System.Windows.Forms.ToolStripButton();
-            this.btnKams = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -75,12 +75,27 @@
             this.btnKams});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(583, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(633, 25);
             this.toolStrip1.TabIndex = 10;
             this.toolStrip1.Text = "toolStrip1";
             // 
+            // btnPing
+            // 
+            this.btnPing.ForeColor = System.Drawing.Color.Black;
+            this.btnPing.Image = ((System.Drawing.Image)(resources.GetObject("btnPing.Image")));
+            this.btnPing.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnPing.Name = "btnPing";
+            this.btnPing.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this.btnPing.Size = new System.Drawing.Size(138, 22);
+            this.btnPing.Text = "Ping Computer";
+            this.btnPing.ToolTipText = "Enter a computers name in the search box, select \r\nthe campus from the drop down " +
+    "box and click this \r\nbutton to attempt to ping the computer on the domain.";
+            this.btnPing.Click += new System.EventHandler(this.BtnPing_Click);
+            // 
             // cmbCampus
             // 
+            this.cmbCampus.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cmbCampus.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbCampus.BackColor = System.Drawing.SystemColors.Info;
             this.cmbCampus.ForeColor = System.Drawing.Color.Silver;
             this.cmbCampus.Margin = new System.Windows.Forms.Padding(0, 0, 1, 0);
@@ -94,6 +109,7 @@
             // tbSearch
             // 
             this.tbSearch.BackColor = System.Drawing.SystemColors.Info;
+            this.tbSearch.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.tbSearch.ForeColor = System.Drawing.Color.Silver;
             this.tbSearch.Margin = new System.Windows.Forms.Padding(10, 0, 1, 0);
             this.tbSearch.Name = "tbSearch";
@@ -103,6 +119,55 @@
             this.tbSearch.Enter += new System.EventHandler(this.TbSearch_Enter);
             this.tbSearch.Leave += new System.EventHandler(this.TbSearch_Leave);
             this.tbSearch.TextChanged += new System.EventHandler(this.TbSearch_TextChanged);
+            // 
+            // btnSettings
+            // 
+            this.btnSettings.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.btnSettings.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnSettings.Image = ((System.Drawing.Image)(resources.GetObject("btnSettings.Image")));
+            this.btnSettings.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnSettings.Name = "btnSettings";
+            this.btnSettings.Size = new System.Drawing.Size(23, 22);
+            this.btnSettings.Text = "&New";
+            this.btnSettings.ToolTipText = "Change the location where the software\r\nwill find the login capture data.";
+            this.btnSettings.Click += new System.EventHandler(this.BtnSettings_Click);
+            // 
+            // btnPrint
+            // 
+            this.btnPrint.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.btnPrint.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnPrint.Image = ((System.Drawing.Image)(resources.GetObject("btnPrint.Image")));
+            this.btnPrint.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnPrint.Name = "btnPrint";
+            this.btnPrint.Size = new System.Drawing.Size(23, 22);
+            this.btnPrint.Text = "&Print";
+            this.btnPrint.ToolTipText = "Print the information in the left column.\r\nThis only prints the first page to sav" +
+    "e paper.";
+            this.btnPrint.Click += new System.EventHandler(this.BtnPrint_Click);
+            // 
+            // btnMunis
+            // 
+            this.btnMunis.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.btnMunis.ForeColor = System.Drawing.Color.Black;
+            this.btnMunis.Image = ((System.Drawing.Image)(resources.GetObject("btnMunis.Image")));
+            this.btnMunis.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnMunis.Name = "btnMunis";
+            this.btnMunis.Size = new System.Drawing.Size(60, 22);
+            this.btnMunis.Text = "Munis";
+            this.btnMunis.ToolTipText = "Open Munis in the default web browser.";
+            this.btnMunis.Click += new System.EventHandler(this.BtnMunis_Click);
+            // 
+            // btnKams
+            // 
+            this.btnKams.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.btnKams.ForeColor = System.Drawing.Color.Black;
+            this.btnKams.Image = global::DLA.Properties.Resources.kams;
+            this.btnKams.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnKams.Margin = new System.Windows.Forms.Padding(92, 1, 0, 2);
+            this.btnKams.Name = "btnKams";
+            this.btnKams.Size = new System.Drawing.Size(59, 22);
+            this.btnKams.Text = "KAMS";
+            this.btnKams.Click += new System.EventHandler(this.btnKams_Click);
             // 
             // tbHost
             // 
@@ -142,8 +207,8 @@
             this.splitContainer1.Panel2.Controls.Add(this.lbEmail);
             this.splitContainer1.Panel2.Controls.Add(this.lbNameF);
             this.splitContainer1.Panel2.Controls.Add(this.tbPing);
-            this.splitContainer1.Size = new System.Drawing.Size(583, 315);
-            this.splitContainer1.SplitterDistance = 195;
+            this.splitContainer1.Size = new System.Drawing.Size(633, 410);
+            this.splitContainer1.SplitterDistance = 243;
             this.splitContainer1.TabIndex = 0;
             // 
             // tbResult
@@ -152,7 +217,7 @@
             this.tbResult.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tbResult.Location = new System.Drawing.Point(0, 0);
             this.tbResult.Name = "tbResult";
-            this.tbResult.Size = new System.Drawing.Size(195, 315);
+            this.tbResult.Size = new System.Drawing.Size(243, 410);
             this.tbResult.TabIndex = 6;
             // 
             // lbLastcomp
@@ -242,14 +307,14 @@
             this.tbPing.Location = new System.Drawing.Point(2, 143);
             this.tbPing.Multiline = true;
             this.tbPing.Name = "tbPing";
-            this.tbPing.Size = new System.Drawing.Size(380, 172);
+            this.tbPing.Size = new System.Drawing.Size(382, 172);
             this.tbPing.TabIndex = 5;
             // 
             // statusStrip1
             // 
-            this.statusStrip1.Location = new System.Drawing.Point(0, 338);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 433);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(583, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(633, 22);
             this.statusStrip1.TabIndex = 12;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -259,7 +324,7 @@
             this.btnAbout.AutoSize = true;
             this.btnAbout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.btnAbout.ForeColor = System.Drawing.Color.Black;
-            this.btnAbout.Location = new System.Drawing.Point(3, 344);
+            this.btnAbout.Location = new System.Drawing.Point(3, 439);
             this.btnAbout.Name = "btnAbout";
             this.btnAbout.Size = new System.Drawing.Size(35, 13);
             this.btnAbout.TabIndex = 13;
@@ -274,81 +339,19 @@
             this.lbUpdate.AutoSize = true;
             this.lbUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.lbUpdate.ForeColor = System.Drawing.Color.Black;
-            this.lbUpdate.Location = new System.Drawing.Point(44, 344);
+            this.lbUpdate.Location = new System.Drawing.Point(44, 439);
             this.lbUpdate.Name = "lbUpdate";
             this.lbUpdate.Size = new System.Drawing.Size(123, 13);
             this.lbUpdate.TabIndex = 14;
             this.lbUpdate.Text = "<--------- Update available";
             this.lbUpdate.Visible = false;
             // 
-            // btnPing
-            // 
-            this.btnPing.ForeColor = System.Drawing.Color.Black;
-            this.btnPing.Image = ((System.Drawing.Image)(resources.GetObject("btnPing.Image")));
-            this.btnPing.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnPing.Name = "btnPing";
-            this.btnPing.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.btnPing.Size = new System.Drawing.Size(138, 22);
-            this.btnPing.Text = "Ping Computer";
-            this.btnPing.ToolTipText = "Enter a computers name in the search box, select \r\nthe campus from the drop down " +
-    "box and click this \r\nbutton to attempt to ping the computer on the domain.";
-            this.btnPing.Click += new System.EventHandler(this.BtnPing_Click);
-            // 
-            // btnSettings
-            // 
-            this.btnSettings.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.btnSettings.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnSettings.Image = ((System.Drawing.Image)(resources.GetObject("btnSettings.Image")));
-            this.btnSettings.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnSettings.Name = "btnSettings";
-            this.btnSettings.Size = new System.Drawing.Size(23, 22);
-            this.btnSettings.Text = "&New";
-            this.btnSettings.ToolTipText = "Change the location where the software\r\nwill find the login capture data.";
-            this.btnSettings.Click += new System.EventHandler(this.BtnSettings_Click);
-            // 
-            // btnPrint
-            // 
-            this.btnPrint.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.btnPrint.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnPrint.Image = ((System.Drawing.Image)(resources.GetObject("btnPrint.Image")));
-            this.btnPrint.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnPrint.Name = "btnPrint";
-            this.btnPrint.Size = new System.Drawing.Size(23, 22);
-            this.btnPrint.Text = "&Print";
-            this.btnPrint.ToolTipText = "Print the information in the left column.\r\nThis only prints the first page to sav" +
-    "e paper.";
-            this.btnPrint.Click += new System.EventHandler(this.BtnPrint_Click);
-            // 
-            // btnMunis
-            // 
-            this.btnMunis.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.btnMunis.ForeColor = System.Drawing.Color.Black;
-            this.btnMunis.Image = ((System.Drawing.Image)(resources.GetObject("btnMunis.Image")));
-            this.btnMunis.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnMunis.Name = "btnMunis";
-            this.btnMunis.Size = new System.Drawing.Size(60, 22);
-            this.btnMunis.Text = "Munis";
-            this.btnMunis.ToolTipText = "Open Munis in the default web browser.";
-            this.btnMunis.Click += new System.EventHandler(this.BtnMunis_Click);
-            // 
-            // btnKams
-            // 
-            this.btnKams.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.btnKams.ForeColor = System.Drawing.Color.Black;
-            this.btnKams.Image = global::DLA.Properties.Resources.kams;
-            this.btnKams.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnKams.Margin = new System.Windows.Forms.Padding(92, 1, 0, 2);
-            this.btnKams.Name = "btnKams";
-            this.btnKams.Size = new System.Drawing.Size(59, 22);
-            this.btnKams.Text = "KAMS";
-            this.btnKams.Click += new System.EventHandler(this.btnKams_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(223)))), ((int)(((byte)(240)))));
-            this.ClientSize = new System.Drawing.Size(583, 360);
+            this.ClientSize = new System.Drawing.Size(633, 455);
             this.Controls.Add(this.lbUpdate);
             this.Controls.Add(this.btnAbout);
             this.Controls.Add(this.statusStrip1);

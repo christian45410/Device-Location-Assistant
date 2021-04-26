@@ -17,7 +17,7 @@ namespace UHS
     {
         Thread th;
         private StringReader myReader;
-        private readonly string swversion = "1.8"; ////////////////////////Version of this software
+        private readonly string swversion = "1.9"; ////////////////////////Version of this software
 
 
         public Form1()
@@ -130,6 +130,9 @@ namespace UHS
 
                 if (File.Exists(adminu + tbSearch.Text + ".log"))
                 {
+                    tbResult.Items.Add("===============================");
+                    tbResult.Items.Add("       ADMIN COMPUTER LOGINS");
+                    tbResult.Items.Add("===============================");
                     var lines = File.ReadAllLines(adminu + tbSearch.Text + ".log").Reverse();
 
                     foreach (string line in lines)
@@ -139,8 +142,11 @@ namespace UHS
                     lbLastcomp.Text = "Last Computer Logon:   " + File.ReadLines(adminu + tbSearch.Text + ".log").Last();
                 }
 
-                else if (File.Exists(elemu + tbSearch.Text + ".log"))
+                if (File.Exists(elemu + tbSearch.Text + ".log"))
                 {
+                    tbResult.Items.Add("===============================");
+                    tbResult.Items.Add(" ELEMENTARY COMPUTER LOGINS");
+                    tbResult.Items.Add("===============================");
                     var lines = File.ReadAllLines(elemu + tbSearch.Text + ".log").Reverse();
 
                     foreach (string line in lines)
@@ -150,8 +156,11 @@ namespace UHS
                     lbLastcomp.Text = "Last Computer Logon:   " + File.ReadLines(elemu + tbSearch.Text + ".log").Last();
                 }
 
-                else if (File.Exists(junioru + tbSearch.Text + ".log"))
+                if (File.Exists(junioru + tbSearch.Text + ".log"))
                 {
+                    tbResult.Items.Add("===============================");
+                    tbResult.Items.Add("      JUNIOR COMPUTER LOGINS");
+                    tbResult.Items.Add("===============================");
                     var lines = File.ReadAllLines(junioru + tbSearch.Text + ".log").Reverse();
 
                     foreach (string line in lines)
@@ -161,8 +170,11 @@ namespace UHS
                     lbLastcomp.Text = "Last Computer Logon:   " + File.ReadLines(junioru + tbSearch.Text + ".log").Last();
                 }
 
-                else if (File.Exists(senioru + tbSearch.Text + ".log"))
+                if (File.Exists(senioru + tbSearch.Text + ".log"))
                 {
+                    tbResult.Items.Add("===============================");
+                    tbResult.Items.Add("      SENIOR COMPUTER LOGINS");
+                    tbResult.Items.Add("===============================");
                     var lines = File.ReadAllLines(senioru + tbSearch.Text + ".log").Reverse();
 
                     foreach (string line in lines)
@@ -172,8 +184,13 @@ namespace UHS
                     lbLastcomp.Text = "Last Computer Logon:   " + File.ReadLines(senioru + tbSearch.Text + ".log").Last();
                 }
 
-                else if (File.Exists(adminc + tbSearch.Text + ".log"))
+                // Computer login search
+                
+                if (File.Exists(adminc + tbSearch.Text + ".log"))
                 {
+                    tbResult.Items.Add("===============================");
+                    tbResult.Items.Add("             ADMIN USER LOGINS");
+                    tbResult.Items.Add("===============================");
                     var lines = File.ReadAllLines(adminc + tbSearch.Text + ".log").Reverse();
 
                     foreach (string line in lines)
@@ -182,8 +199,11 @@ namespace UHS
                     }
                 }
 
-                else if (File.Exists(elemc + tbSearch.Text + ".log"))
+                if (File.Exists(elemc + tbSearch.Text + ".log"))
                 {
+                    tbResult.Items.Add("===============================");
+                    tbResult.Items.Add("      ELEMENTARY USER LOGINS");
+                    tbResult.Items.Add("===============================");
                     var lines = File.ReadAllLines(elemc + tbSearch.Text + ".log").Reverse();
 
                     foreach (string line in lines)
@@ -192,8 +212,11 @@ namespace UHS
                     }
                 }
 
-                else if (File.Exists(juniorc + tbSearch.Text + ".log"))
+                if (File.Exists(juniorc + tbSearch.Text + ".log"))
                 {
+                    tbResult.Items.Add("===============================");
+                    tbResult.Items.Add("            JUNIOR USER LOGINS");
+                    tbResult.Items.Add("===============================");
                     var lines = File.ReadAllLines(juniorc + tbSearch.Text + ".log").Reverse();
 
                     foreach (string line in lines)
@@ -202,8 +225,11 @@ namespace UHS
                     }
                 }
 
-                else if (File.Exists(seniorc + tbSearch.Text + ".log"))
+                if (File.Exists(seniorc + tbSearch.Text + ".log"))
                 {
+                    tbResult.Items.Add("===============================");
+                    tbResult.Items.Add("           SENIOR USER LOGINS");
+                    tbResult.Items.Add("===============================");
                     var lines = File.ReadAllLines(seniorc + tbSearch.Text + ".log").Reverse();
 
                     foreach (string line in lines)
@@ -227,13 +253,13 @@ namespace UHS
                 return;
             }
 
-            else if (cmbCampus.SelectedIndex == 44)
+            else if (cmbCampus.SelectedIndex == 45)
             {
                 cmbCampus.SelectedIndex = 0;
                 return;
             }
 
-            else if (cmbCampus.SelectedIndex == 61)
+            else if (cmbCampus.SelectedIndex == 63)
             {
                 cmbCampus.SelectedIndex = 0;
                 return;
@@ -272,6 +298,7 @@ namespace UHS
             "OKE",
             "OLE",
             "PE",
+            "PMCE",
             "PME",
             "RAE",
             "RES",
@@ -293,6 +320,7 @@ namespace UHS
             "BJH",
             "CJH",
             "CRJH",
+            "HJH",
             "KJH",
             "MCJH",
             "MDJH",
@@ -306,6 +334,7 @@ namespace UHS
             "WMJH",
             "──────",
             "CRHS",
+            "JHS",
             "KHS",
             "MCHS",
             "MCTC",
@@ -349,7 +378,7 @@ namespace UHS
             try
             {
                 WebClient webClient = new WebClient();
-                if (!webClient.DownloadString(@"\\ktfs01\District\Admin\Technology\Desktop Services\CL\Software\ULA\Updates\version\version_update.txt").Contains(swversion))//Version of this software
+                if (!webClient.DownloadString(@"\\ktfs01\District\Admin\Technology\Desktop Services\CL\Software\DLA\Updates\version\version_update.txt").Contains(swversion))//Version of this software
                 {
                     using (WebClient Client = new WebClient())
                     {

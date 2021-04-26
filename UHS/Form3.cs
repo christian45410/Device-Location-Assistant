@@ -9,7 +9,7 @@ namespace DLA
 {
     public partial class Form3 : Form
     {
-        private readonly string swversion = "1.8"; ////////////////////////Version of this software
+        private readonly string swversion = "1.9"; ////////////////////////Version of this software
 
         public Form3()
         {
@@ -20,7 +20,7 @@ namespace DLA
             {
 
                 WebClient webClient = new WebClient();
-                if (!webClient.DownloadString(@"\\ktfs01\District\Admin\Technology\Desktop Services\CL\Software\ULA\Updates\version\version_update.txt").Contains(swversion))
+                if (!webClient.DownloadString(@"\\ktfs01\District\Admin\Technology\Desktop Services\CL\Software\DLA\Updates\version\version_update.txt").Contains(swversion))
                 {
                     btnUpdate.Text = "Update Available";
                     btnUpdate.Enabled = true;
@@ -77,11 +77,11 @@ namespace DLA
             try
             {
                 WebClient webClient = new WebClient();
-                if (!webClient.DownloadString(@"\\ktfs01\District\Admin\Technology\Desktop Services\CL\Software\ULA\Updates\version\version_update.txt").Contains(swversion))//Version of this software
+                if (!webClient.DownloadString(@"\\ktfs01\District\Admin\Technology\Desktop Services\CL\Software\DLA\Updates\version\version_update.txt").Contains(swversion))//Version of this software
                 {
                     using (WebClient Client = new WebClient())
                     {
-                        File.Copy(@"\\ktfs01\District\Admin\Technology\Desktop Services\CL\Software\ULA\Updates\files\updater.exe", Application.StartupPath + @"\updater.exe");
+                        File.Copy(@"\\ktfs01\District\Admin\Technology\Desktop Services\CL\Software\DLA\Updates\files\updater.exe", Application.StartupPath + @"\updater.exe");
                         Process.Start(Application.StartupPath + @"\updater.exe");
                         Environment.Exit(0);
                     }
