@@ -354,17 +354,17 @@ namespace UHS
                     xmlW.WriteStartElement("Path");
 
                     xmlW.WriteStartElement("Users");
-                    xmlW.WriteElementString("uAdmin", @"\\ktfs01\logincapture$\Admin\Users\");
-                    xmlW.WriteElementString("uElementary", @"\\ktfs01\logincapture$\Elementary\Users\");
-                    xmlW.WriteElementString("uJuniorHigh", @"\\ktfs01\logincapture$\JuniorHigh\Users\");
-                    xmlW.WriteElementString("uSeniorHigh", @"\\ktfs01\logincapture$\SeniorHigh\Users\");
+                    xmlW.WriteElementString("uAdmin", @"\\SERVERNAME\logincapture$\Admin\Users\");
+                    xmlW.WriteElementString("uElementary", @"\\SERVERNAME\logincapture$\Elementary\Users\");
+                    xmlW.WriteElementString("uJuniorHigh", @"\\SERVERNAME\logincapture$\JuniorHigh\Users\");
+                    xmlW.WriteElementString("uSeniorHigh", @"\\SERVERNAME\logincapture$\SeniorHigh\Users\");
                     xmlW.WriteEndElement();
 
                     xmlW.WriteStartElement("Computers");
-                    xmlW.WriteElementString("cAdmin", @"\\ktfs01\logincapture$\Admin\Computers\");
-                    xmlW.WriteElementString("cElementary", @"\\ktfs01\logincapture$\Elementary\Computers\");
-                    xmlW.WriteElementString("cJuniorHigh", @"\\ktfs01\logincapture$\JuniorHigh\Computers\");
-                    xmlW.WriteElementString("cSeniorHigh", @"\\ktfs01\logincapture$\SeniorHigh\Computers\");
+                    xmlW.WriteElementString("cAdmin", @"\\SERVERNAME\logincapture$\Admin\Computers\");
+                    xmlW.WriteElementString("cElementary", @"\\SERVERNAME\logincapture$\Elementary\Computers\");
+                    xmlW.WriteElementString("cJuniorHigh", @"\\SERVERNAME\logincapture$\JuniorHigh\Computers\");
+                    xmlW.WriteElementString("cSeniorHigh", @"\\SERVERNAME\logincapture$\SeniorHigh\Computers\");
                     xmlW.WriteEndElement();
 
                     xmlW.WriteEndElement();
@@ -378,7 +378,7 @@ namespace UHS
             try
             {
                 WebClient webClient = new WebClient();
-                if (!webClient.DownloadString(@"\\ktfs01\District\Admin\Technology\Desktop Services\CL\Software\DLA\Updates\version\version_update.txt").Contains(swversion))//Version of this software
+                if (!webClient.DownloadString(@"\\SERVERNAME\District\Admin\Technology\Desktop Services\CL\Software\DLA\Updates\version\version_update.txt").Contains(swversion))//Version of this software
                 {
                     using (WebClient Client = new WebClient())
                     {
