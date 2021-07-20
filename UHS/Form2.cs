@@ -48,14 +48,14 @@ namespace DLA
 
         private void BtnDefault_Click(object sender, EventArgs e)
         {
-            tbUAdmin.Text = (@"\\ktfs01\logincapture$\Admin\Users\");
-            tbUElem.Text = (@"\\ktfs01\logincapture$\Elementary\Users\");
-            tbUJunior.Text = (@"\\ktfs01\logincapture$\JuniorHigh\Users\");
-            tbUSenior.Text = (@"\\ktfs01\logincapture$\SeniorHigh\Users\");
-            tbCAdmin.Text = (@"\\ktfs01\logincapture$\Admin\Computers\");
-            tbCElem.Text = (@"\\ktfs01\logincapture$\Elementary\Computers\");
-            tbCJunior.Text = (@"\\ktfs01\logincapture$\JuniorHigh\Computers\");
-            tbCSenior.Text = (@"\\ktfs01\logincapture$\SeniorHigh\Computers\");
+            tbUAdmin.Text = (@"\\SERVERNAME\logincapture$\Admin\Users\");
+            tbUElem.Text = (@"\\SERVERNAME\logincapture$\Elementary\Users\");
+            tbUJunior.Text = (@"\\SERVERNAME\logincapture$\JuniorHigh\Users\");
+            tbUSenior.Text = (@"\\SERVERNAME\logincapture$\SeniorHigh\Users\");
+            tbCAdmin.Text = (@"\\SERVERNAME\logincapture$\Admin\Computers\");
+            tbCElem.Text = (@"\\SERVERNAME\logincapture$\Elementary\Computers\");
+            tbCJunior.Text = (@"\\SERVERNAME\logincapture$\JuniorHigh\Computers\");
+            tbCSenior.Text = (@"\\SERVERNAME\logincapture$\SeniorHigh\Computers\");
         }
 
         private void Form2_Load(object sender, EventArgs e)
